@@ -11,6 +11,7 @@
         <div class="logo">
           <img src="Screenshot 2025-08-20 154043.ico" class="site-icon">
           </div>
+          
         <nav>
             <ul>
                 <li><a href="index.html">HOME</a></li>
@@ -20,17 +21,48 @@
             </ul>
         </nav>
         </header>
+        <!-- Filter Button -->
+<button id="filterBtn">Filters ⬇</button>
 
+<!-- Hidden Filter Panel -->
+<div id="filterPanel" class="filter-panel">
+  <h3>Filters</h3>
+  
+  <!-- Brand -->
+  <div class="filter-group">
+    <h4>TYPE</h4>
+    <label><input type="checkbox" name="brand" value="Apple"> SOM</label>
+    <label><input type="checkbox" name="brand" value="Samsung"> FBGA</label>
+    <label><input type="checkbox" name="brand" value="Sony"> TPU</label>
+    <h4>AI  PERFORMANCE</h4>
+    <label><input type="checkbox" name="brand" value="Apple"> 2040 TFLOPS</label>
+    <label><input type="checkbox" name="brand" value="Samsung"> 70 TOPS</label>
+    <label><input type="checkbox" name="brand" value="Sony"> below 40 TOPS</label>
+    <label><input type="checkbox" name="brand" value="Sony"> UPTO 275 TOPS</label>
+  <h4>ADD ON FEATURE</h4>
+    <label><input type="checkbox" name="brand" value="Apple"> WIFI</label>
+    <label><input type="checkbox" name="brand" value="Samsung"> 5G CONNECTIVE</label>
+    <label><input type="checkbox" name="brand" value="Sony"> GLMS INPUT</label>
+  </div>
+
+  <!-- Price -->
+  <div class="filter-group">
+    <h4>Price</h4>
+    <input type="range" min="0" max="2000" step="50" value="500" id="priceRange">
+    <span id="priceValue">$500</span>
+  </div>
+</div>
+
+<div class="filter-heading">
         <h1>The Edge AI Hardware Powerhouse Complete. Connected. Deployed.</h1>
     </div>
-
-    <div class="filter-container">
-        <button class="filter-btn active" onclick="filterSelection('INDUSTRY')">INDUSTRY</button>
-        <button class="filter-btn" onclick="filterSelection('dev')">DEVELOPER</button>
-    </div>
-
+    <div class="toggle-container">
+  <div class="toggle-pill">
+    <div class="toggle-option active">  💼INDUSTRY</div>
+    <div class="toggle-option">DEV💻</div>
+  </div>
+  </div>
     <div class="product-grid">
-        
         <div class="product-card1">
             <div>
                 <h3>PROGECT 1</h3>
@@ -44,6 +76,7 @@
          <div class="product-card2">
             <div>
                 <h3>PROGECT 2</h3>
+                <img src="product1.png" alt="product image" class="prioduct-imag" width="250px" height="250px">
                 <span class="spec-label">Type</span>
             </div>
             <div class="btn-group">
@@ -55,6 +88,7 @@
         <div class="product-card3">
             <div>
                 <h3>PRODECT 3</h3>
+                  <img src="product1.png" alt="product image" class="prioduct-imag" width="250px" height="250px">
                 <span class="spec-label">Type</span>
             <div class="btn-group">
                 <button class="action-btn" onclick="window.location.href='buy.html'">buy</button>
@@ -66,7 +100,7 @@
             <div>
                 <h3>PRODUCT 4</h3>
                 <span class="spec-label">Type</span>
-             
+               <img src="product1.png" alt="product image" class="prioduct-imag" width="250px" height="250px">
             </div>
             <div class="btn-group">
                <button class="action-btn" onclick="window.location.href='buy.html'">buy</button>
@@ -78,6 +112,7 @@
             <div>
                 <h3>PRODECT 5</h3>
                 <span class="spec-label">Type</span>
+                  <img src="product1.png" alt="product image" class="prioduct-imag" width="250px" height="250px">
             <div class="btn-group">
             <button class="action-btn" onclick="window.location.href='buy.html'">buy</button>
             </div>
@@ -87,6 +122,7 @@
             <div>
                 <h3>PRODECT 6</h3>
                 <span class="spec-label">Type</span>
+                  <img src="product1.png" alt="product image" class="prioduct-imag" width="250px" height="250px">
               
             </div>
             <div class="btn-group">
@@ -97,7 +133,7 @@
             <div>
                 <h3>PRODECT 7</h3>
                 <span class="spec-label">Type</span>
-             
+               <img src="product1.png" alt="product image" class="prioduct-imag" width="250px" height="250px">
             <div class="btn-group">
                 <button class="action-btn" onclick="window.location.href='buy.html'">buy</button>
             </div>
@@ -107,6 +143,7 @@
             <div>
                 <h3>PRODECT 8</h3>
                 <span class="spec-label">Type</span>
+                  <img src="product1.png" alt="product image" class="prioduct-imag" width="250px" height="250px">
             </div>
             <div class="btn-group">
              <button class="action-btn" onclick="window.location.href='buy.html'">buy</button>
@@ -114,11 +151,15 @@
         </div>
 
     </div>
+    <div class="finishing">
+    <h2>Build Beyond Limits !</h2>
+    </div>
     <footer>
+       
         <div class="footer-content">
             <div class="footer-brand">
-                <h2>powerflow</h2>
-                <p>Build Beyond Limits!</p>
+             
+                <img src="Screenshot 2025-08-20 154043.png" class="">
                 <div class="contact-info">
                     <p>shanjayshree@powerflowai.in</p>
                     <p>support@powerflowai.in</p>
@@ -179,6 +220,30 @@
                 }
             });
         }
+        // Toggle filter panel
+const filterBtn = document.getElementById("filterBtn");
+const filterPanel = document.getElementById("filterPanel");
+
+filterBtn.addEventListener("click", () => {
+  filterPanel.style.display = 
+    filterPanel.style.display === "block" ? "none" : "block";
+});
+
+// Price range update
+const priceRange = document.getElementById("priceRange");
+const priceValue = document.getElementById("priceValue");
+
+priceRange.addEventListener("input", () => {
+  priceValue.textContent = `$${priceRange.value}`;
+});
+  const options = document.querySelectorAll(".toggle-option");
+
+  options.forEach(option => {
+    option.addEventListener("click", () => {
+      options.forEach(o => o.classList.remove("active"));
+      option.classList.add("active");
+    });
+  });
     </script>
 </body>
 </html>
